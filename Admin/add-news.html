@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add News - NSBM NewsDesk Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="brand"><strong>NSBM</strong><small>NewsDesk Admin</small></div>
+    <nav aria-label="Admin">
+      <a href="index.html">Dashboard</a>
+      <a href="submissions.html">Review Queue <span class="badge">12</span></a>
+      <a href="add-news.html" class="active" aria-current="page">Add News</a>
+      <a href="breaking.html">Breaking News</a>
+      <a href="users.html">Users &amp; Categories</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#">View public site</a>
+      <p>Faculty Admin<br><small>NewsDesk moderator</small></p>
+      <a href="#">Log out</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <header class="page-header">
+      <div>
+        <h1>Add News</h1>
+        <p>Write and publish an article yourself. Admin posts skip the review queue.</p>
+      </div>
+    </header>
+
+    <div class="panels">
+
+      <!-- Article form -->
+      <section class="panel panel-main">
+        <form id="add-news-form" action="#" method="post" enctype="multipart/form-data">
+
+          <div class="form-field">
+            <label for="title">Article title *</label>
+            <input id="title" name="title" type="text" placeholder="e.g. Computing Faculty Hackathon 2026 Registration Open" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="category">Category *</label>
+              <select id="category" name="category" required>
+                <option value="">Select a category</option>
+                <option>Sport</option>
+                <option>Academic</option>
+                <option>Event</option>
+                <option>General</option>
+                <option>Clubs</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="author">Author / Club / Student Society *</label>
+              <input id="author" name="author" type="text" placeholder="e.g. Software Engineering Society" required>
+            </div>
+          </div>
+
+          <!-- Featured banner: upload a file OR paste a URL -->
+          <fieldset>
+            <legend>Featured banner image (optional)</legend>
+            <div class="form-field">
+              <label for="banner-file">Upload an image</label>
+              <input id="banner-file" name="banner_file" type="file" accept="image/*">
+              <small>JPG, PNG or WebP. Maximum 5 MB.</small>
+            </div>
+            <div id="banner-preview" class="image-previews"></div>
+            <div class="form-field">
+              <label for="banner">Or paste an image URL</label>
+              <input id="banner" name="banner" type="url" placeholder="https://images.unsplash.com/...">
+            </div>
+          </fieldset>
+
+          <!-- Gallery: several images -->
+          <fieldset>
+            <legend>Gallery images (optional)</legend>
+            <div class="form-field">
+              <label for="gallery-files">Upload one or more images</label>
+              <input id="gallery-files" name="gallery_files" type="file" accept="image/*" multiple>
+              <small>Up to 10 images, 5 MB each.</small>
+            </div>
+            <p id="image-error" role="alert" hidden></p>
+            <div id="gallery-preview" class="image-previews"></div>
+          </fieldset>
+
+          <div class="form-field">
+            <label for="content">Article full description / content *</label>
+            <textarea id="content" name="content" rows="10" placeholder="Write the complete details of the announcement, event date, venue, registration links, etc." required></textarea>
+          </div>
+
+          <fieldset>
+            <legend>Publishing</legend>
+            <label><input type="radio" name="publish_mode" value="now" checked> Publish now</label>
+            <label><input type="radio" name="publish_mode" value="draft"> Save as draft</label>
+            <label><input type="radio" name="publish_mode" value="schedule"> Schedule for later</label>
+            <div class="form-field">
+              <label for="publish_at">Publish date and time (only for scheduled posts)</label>
+              <input id="publish_at" name="publish_at" type="datetime-local">
+            </div>
+            <label><input type="checkbox" name="is_breaking"> Also show as Breaking News</label>
+          </fieldset>
+
+          <div class="button-row">
+            <button type="submit" class="btn-primary">Save article</button>
+            <button type="reset" class="btn-outline">Clear form</button>
+          </div>
+
+        </form>
+      </section>
+
+      <!-- Side help panel -->
+      <div class="panel-side">
+        <section class="panel">
+          <h2>Before you publish</h2>
+          <ul>
+            <li>Check the title and category</li>
+            <li>Include date, venue and links where needed</li>
+            <li>Make sure content follows NSBM Green University media policies</li>
+          </ul>
+        </section>
+        <section class="panel">
+          <h2>Recently added by you</h2>
+          <ul>
+            <li>Sports Day Results - Sport - Published</li>
+            <li>Library Hours Update - General - Draft</li>
+          </ul>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+</div>
+<script src="js/add-news.js"></script>
+</body>
+</html>

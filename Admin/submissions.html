@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review Queue - NSBM NewsDesk Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="brand"><strong>NSBM</strong><small>NewsDesk Admin</small></div>
+    <nav aria-label="Admin">
+      <a href="index.html">Dashboard</a>
+      <a href="submissions.html" class="active" aria-current="page">Review Queue <span class="badge">12</span></a>
+      <a href="add-news.html">Add News</a>
+      <a href="breaking.html">Breaking News</a>
+      <a href="users.html">Users &amp; Categories</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#">View public site</a>
+      <p>Faculty Admin<br><small>NewsDesk moderator</small></p>
+      <a href="#">Log out</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <header class="page-header">
+      <div>
+        <h1>Review Queue</h1>
+        <p>Articles from the Student &amp; Club Portal wait here until you approve them.</p>
+      </div>
+    </header>
+
+    <div class="review">
+
+      <!-- LEFT: list of submissions -->
+      <section class="panel review-list">
+        <div class="tabs" role="group" aria-label="Filter submissions">
+          <button type="button" data-filter="pending" class="active">Pending</button>
+          <button type="button" data-filter="approved">Approved</button>
+          <button type="button" data-filter="rejected">Rejected</button>
+          <button type="button" data-filter="all">All</button>
+        </div>
+
+        <div class="table-wrap">
+          <table id="submissions-table">
+            <thead>
+              <tr><th>Article</th><th>Category</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <!-- Each row carries its data in data-* attributes. Later, generate these rows from your database. -->
+              <tr data-id="1" data-status="pending" data-category="Event"
+                  data-title="Computing Faculty Hackathon 2026 Registration Open"
+                  data-author="Software Engineering Society" data-time="Today, 09:40"
+                  data-body="Registration for the Computing Faculty Hackathon 2026 is now open. [Full article text here]">
+                <td>Computing Faculty Hackathon 2026 Registration Open</td>
+                <td><span class="tag tag-event">Event</span></td>
+                <td><span class="status status-pending">Pending</span></td>
+              </tr>
+              <tr data-id="2" data-status="pending" data-category="Sport"
+                  data-title="Inter-Faculty Rugby Sevens Squad Announced"
+                  data-author="NSBM Rugby Club" data-time="Today, 08:15"
+                  data-body="The NSBM Rugby Club has announced its squad. [Full article text here]">
+                <td>Inter-Faculty Rugby Sevens Squad Announced</td>
+                <td><span class="tag tag-sport">Sport</span></td>
+                <td><span class="status status-pending">Pending</span></td>
+              </tr>
+              <tr data-id="3" data-status="pending" data-category="Academic"
+                  data-title="Semester Exam Timetable Released"
+                  data-author="Faculty of Computing" data-time="Yesterday"
+                  data-body="The examination timetable is now available. [Full article text here]">
+                <td>Semester Exam Timetable Released</td>
+                <td><span class="tag tag-academic">Academic</span></td>
+                <td><span class="status status-pending">Pending</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- RIGHT: selected article -->
+      <section class="panel review-detail">
+        <p>
+          <span id="detail-category" class="tag"></span>
+          <span id="detail-status" class="status"></span>
+        </p>
+        <h2 id="detail-title"></h2>
+        <p id="detail-meta"></p>
+        <div class="banner-placeholder">Featured banner image preview</div>
+        <p id="detail-body"></p>
+        <p>Author confirmed the content follows NSBM Green University media policies.</p>
+
+        <!-- Shown while status is pending -->
+        <div id="detail-actions">
+          <div class="form-field">
+            <label for="feedback">Feedback to the author (optional)</label>
+            <textarea id="feedback" rows="3" placeholder="Explain what needs to change if you reject this article"></textarea>
+          </div>
+          <label><input type="checkbox" id="make-breaking"> Also feature this as Breaking News</label>
+          <div class="button-row">
+            <button type="button" id="btn-approve" class="btn-success">Approve &amp; publish</button>
+            <button type="button" id="btn-reject" class="btn-danger">Reject</button>
+          </div>
+        </div>
+
+        <!-- Shown after approve / reject -->
+        <div id="detail-decided" hidden>
+          <span id="detail-note"></span>
+          <button type="button" id="btn-reopen" class="btn-outline">Move back to pending</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</div>
+<script src="js/admin.js"></script>
+</body>
+</html>

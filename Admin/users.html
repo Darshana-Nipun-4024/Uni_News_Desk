@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Users and Categories - NSBM NewsDesk Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="brand"><strong>NSBM</strong><small>NewsDesk Admin</small></div>
+    <nav aria-label="Admin">
+      <a href="index.html">Dashboard</a>
+      <a href="submissions.html">Review Queue <span class="badge">12</span></a>
+      <a href="add-news.html">Add News</a>
+      <a href="breaking.html">Breaking News</a>
+      <a href="users.html" class="active" aria-current="page">Users &amp; Categories</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#">View public site</a>
+      <p>Faculty Admin<br><small>NewsDesk moderator</small></p>
+      <a href="#">Log out</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <header class="page-header">
+      <div>
+        <h1>Users &amp; Categories</h1>
+        <p>Control who can submit news and how stories are grouped.</p>
+      </div>
+      <form role="search">
+        <input type="search" placeholder="Search users by name or email" aria-label="Search users">
+      </form>
+    </header>
+
+    <div class="panels">
+
+      <!-- Users -->
+      <section class="panel panel-main">
+        <h2>Registered users</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Amaya Perera</td>
+                <td>amaya.p@students.nsbm.ac.lk</td>
+                <td>Student</td><td>Active</td>
+                <td><button type="button" class="btn-outline">Manage</button></td>
+              </tr>
+              <tr>
+                <td>Kavindu Silva</td>
+                <td>kavindu.s@students.nsbm.ac.lk</td>
+                <td>Club admin</td><td>Active</td>
+                <td><button type="button" class="btn-outline">Manage</button></td>
+              </tr>
+              <tr>
+                <td>Dilini Jayasena</td>
+                <td>dilini.j@students.nsbm.ac.lk</td>
+                <td>Student</td><td>Blocked</td>
+                <td><button type="button" class="btn-outline">Manage</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Categories -->
+      <section class="panel panel-side">
+        <h2>Categories</h2>
+        <ul>
+          <li>Sport - 9 articles <button type="button" class="btn-outline">Edit</button></li>
+          <li>Academic - 11 articles <button type="button" class="btn-outline">Edit</button></li>
+          <li>Event - 8 articles <button type="button" class="btn-outline">Edit</button></li>
+          <li>General - 6 articles <button type="button" class="btn-outline">Edit</button></li>
+          <li>Clubs - 4 articles <button type="button" class="btn-outline">Edit</button></li>
+        </ul>
+        <form action="#" method="post">
+          <div class="form-field">
+            <label for="new-category">New category name</label>
+            <input id="new-category" name="category" type="text" placeholder="e.g. Scholarships">
+          </div>
+          <button type="submit" class="btn-primary">Add</button>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+</div>
+</body>
+</html>
