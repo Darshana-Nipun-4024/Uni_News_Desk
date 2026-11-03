@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Review Queue - NSBM NewsDesk Admin</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -35,7 +33,6 @@
 
     <div class="review">
 
-      <!-- LEFT: list of submissions -->
       <section class="panel review-list">
         <div class="tabs" role="group" aria-label="Filter submissions">
           <button type="button" data-filter="pending" class="active">Pending</button>
@@ -50,7 +47,7 @@
               <tr><th>Article</th><th>Category</th><th>Status</th></tr>
             </thead>
             <tbody>
-              <!-- Each row carries its data in data-* attributes. Later, generate these rows from your database. -->
+              
               <tr data-id="1" data-status="pending" data-category="Event"
                   data-title="Computing Faculty Hackathon 2026 Registration Open"
                   data-author="Software Engineering Society" data-time="Today, 09:40"
@@ -80,7 +77,7 @@
         </div>
       </section>
 
-      <!-- RIGHT: selected article -->
+      
       <section class="panel review-detail">
         <p>
           <span id="detail-category" class="tag"></span>
@@ -92,7 +89,7 @@
         <p id="detail-body"></p>
         <p>Author confirmed the content follows NSBM Green University media policies.</p>
 
-        <!-- Shown while status is pending -->
+        
         <div id="detail-actions">
           <div class="form-field">
             <label for="feedback">Feedback to the author (optional)</label>
@@ -105,7 +102,7 @@
           </div>
         </div>
 
-        <!-- Shown after approve / reject -->
+        
         <div id="detail-decided" hidden>
           <span id="detail-note"></span>
           <button type="button" id="btn-reopen" class="btn-outline">Move back to pending</button>
