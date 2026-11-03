@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NSBM NewsDesk - Campus news, events and announcements">
+  <title>NSBM NewsDesk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand-mini" href="index.html" aria-label="NSBM Green University Town home">
+      <span class="brand-mark">◆</span>
+      <span>GREEN<br>UNIVERSITY<br>TOWN</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#home"><span class="nav-icon">⌂</span>Home</a>
+      <a href="#categories"><span class="nav-icon">⌕</span>Explore &amp; Search</a>
+      <a href="#submit"><span class="nav-icon">➤</span>Submit News</a>
+    </nav>
+    <a class="breaking-pill" href="#news"><span>▤</span> BREAKING NEWS</a>
+    <a class="login-link" href="#login"><span>↪</span> Login / Register</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <div class="hero-topline">
+          <span class="eyebrow">CAMPUS NEWS • EVENTS • ANNOUNCEMENTS</span>
+          <form class="search-box" id="searchForm">
+            <input id="searchInput" type="search" placeholder="Search..." aria-label="Search news">
+            <button type="submit" aria-label="Search">⌕</button>
+          </form>
+        </div>
+        <div class="hero-title-row">
+          <div>
+            <h1>NSBM<br>NEWSDESK</h1>
+            <p class="welcome">Welcome to NSBM NewsDesk!</p>
+            <p class="tagline">Your Ultimate Hub for Campus News, Events &amp; Announcements</p>
+            <p class="intro">Stay connected with everything happening around NSBM Green University. From official academic notices and upcoming club events to student stories and breaking campus news, NSBM NewsDesk brings all updates right to your fingertips. Explore stories, stay informed, and engage with the vibrant campus community today!</p>
+          </div>
+          <div class="hero-emblem" aria-hidden="true">
+            <span class="leaf leaf-one"></span><span class="leaf leaf-two"></span><span class="leaf leaf-three"></span>
+          </div>
+        </div>
+      </div>
+      <div class="category-strip" id="categories">
+        <button class="category-card sport" data-category="Sport"><span>SPORT</span><img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=600&q=80" alt=""></button>
+        <button class="category-card academic" data-category="Academic"><span>Academic</span><img src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=600&q=80" alt=""></button>
+        <button class="category-card event" data-category="Event"><span>Event</span><img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=600&q=80" alt=""></button>
+        <button class="category-card general" data-category="General"><span>General</span><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&q=80" alt=""></button>
+        <button class="category-card clubs" data-category="Clubs"><span>Clubs</span><img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80" alt=""></button>
+      </div>
+    </section>
+
+    <section class="news-section" id="news">
+      <div class="section-heading">
+        <div><span class="eyebrow dark">LATEST UPDATES</span><h2>Campus News Feed</h2></div>
+        <button class="clear-filter" id="clearFilter">View all news</button>
+      </div>
+      <div class="news-grid" id="newsGrid">
+        <p class="loading">Loading campus updates...</p>
+      </div>
+    </section>
+
+    <section class="submit-section" id="submit">
+      <div>
+        <span class="eyebrow">HAVE A STORY TO SHARE?</span>
+        <h2>Your campus. Your voice.</h2>
+        <p>Share a campus update, achievement or upcoming event with the NSBM community.</p>
+      </div>
+      <form id="submitForm" class="submit-form">
+        <input name="title" placeholder="News title" required>
+        <select name="category" required>
+          <option value="">Select category</option>
+          <option>Sport</option><option>Academic</option><option>Event</option><option>General</option><option>Clubs</option>
+        </select>
+        <textarea name="description" placeholder="Brief description" rows="3" required></textarea>
+        <button type="submit">Submit News</button>
+        <p class="form-message" id="formMessage" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-column university">
+      <h3>NSBM Green University</h3>
+      <p>Faculty of Computing<br>Web and Mobile Application Development</p>
+      <p>Module Project Assignment<br>Batch: 26.1 IFSL</p>
+    </div>
+    <div class="footer-column">
+      <h3>System Quick Links</h3>
+      <a href="#news">Home Feed</a>
+      <a href="#categories">Academic Categories</a>
+      <a href="#submit">Submit Article</a>
+      <a href="#login">Admin Console</a>
+    </div>
+    <div class="footer-column support" id="login">
+      <h3>Connect &amp; Support</h3>
+      <p>Pitipana, Homagama, Sri Lanka</p>
+      <div class="footer-logo"><span class="brand-mark">◆</span><strong>NSBM<br><small>GREEN UNIVERSITY TOWN</small></strong></div>
+    </div>
+    <div class="copyright">© 2026 NSBM NewsDesk · Campus news and announcements</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
