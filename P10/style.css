@@ -87,7 +87,7 @@ body {
 /* --- Main Content Wrapper (Blurred Background) --- */
 .content-wrapper {
     /* Using a generic blurry outdoor image to replicate the background */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80&blur=10');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('bgphoto.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
