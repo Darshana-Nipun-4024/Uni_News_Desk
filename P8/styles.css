@@ -1,0 +1,223 @@
+/* --- Global Reset & Variables --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-red: #f01414;
+    --primary-green: #1a8c2f;
+    --card-title-red: #f34c4c;
+    --text-dark: #222222;
+    --font-sans: 'Roboto', sans-serif;
+    --font-serif: 'Merriweather', serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+}
+
+/* --- Header Section --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.main-nav a:hover {
+    color: var(--primary-green);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-breaking {
+    background-color: var(--primary-red);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.login-link {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* --- Main Content (Blurred Background Effect) --- */
+.content-wrapper {
+    background-image: linear-gradient(rgba(235, 240, 235, 0.8), rgba(235, 240, 235, 0.8)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: calc(100vh - 80px);
+    padding: 50px 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Section Title & Grid --- */
+.section-title {
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: 42px;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -8px;
+    width: 100%;
+    height: 4px;
+    background-color: #ff6b6b; 
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.loading-msg {
+    font-size: 18px;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+/* --- News Cards --- */
+.news-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-wrap {
+    width: 100%;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-title {
+    font-family: var(--font-serif);
+    color: var(--card-title-red);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.card-desc {
+    font-family: var(--font-serif);
+    font-size: 13.5px;
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-weight: 700;
+}
+
+/* --- Call To Action Box --- */
+.cta-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+.cta-box {
+    background-color: var(--primary-green);
+    color: white;
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(26, 140, 47, 0.3);
+}
+
+.cta-box h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cta-box p {
+    font-size: 15px;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.btn-submit {
+    background-color: white;
+    color: var(--primary-green);
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #f4f4f4;
+    transform: translateY(-2px);
+}
