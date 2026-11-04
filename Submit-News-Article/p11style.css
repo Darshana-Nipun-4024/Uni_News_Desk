@@ -1,0 +1,333 @@
+/* --- CSS Variables & Reset --- */
+:root {
+    --header-bg: #3bb150;
+    --form-bg: #cce9cc;
+    --input-bg: #9ecda0;
+    --text-dark: #124d1a;
+    --text-placeholder: #5c8b60;
+    --btn-red: #ff0000;
+    --btn-submit-bg: #108e2b;
+    --white: #ffffff;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+/* --- Header Styles --- */
+.main-header {
+    background-color: var(--header-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px 0 0;
+    height: 80px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo-area {
+    background-color: var(--white);
+    height: 100%;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo-placeholder {
+    text-align: center;
+    line-height: 1.1;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    gap: 5px;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    opacity: 1;
+}
+
+.nav-menu i {
+    font-size: 1.2rem;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.breaking-news-btn {
+    background-color: var(--btn-red);
+    color: var(--white);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.login-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* --- Main Content & Form Styles --- */
+.main-content {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    background-color: var(--form-bg);
+    border-radius: 24px;
+    padding: 50px;
+    width: 100%;
+    max-width: 850px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.badge {
+    background-color: #639d67;
+    color: var(--white);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.form-container h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* --- Message Box (for JS Alerts) --- */
+.message-box {
+    display: none;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.message-box.success {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.message-box.error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* --- Form Elements --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.half-width {
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+input[type="text"],
+input[type="url"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--text-dark);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-placeholder);
+}
+
+/* Specific styling for the URL input which appears borderless */
+.transparent-input {
+    background: transparent !important;
+    border: none !important;
+    outline: none;
+    padding: 5px 0 !important;
+    color: var(--text-placeholder);
+    font-size: 0.95rem;
+    border-radius: 0 !important;
+}
+.transparent-input::placeholder {
+    color: var(--text-placeholder);
+}
+
+.helper-text {
+    font-size: 0.75rem;
+    color: var(--text-dark);
+    margin-top: 5px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* --- Agreement Box --- */
+.agreement-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--text-dark);
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-top: 10px;
+    background-color: rgba(255,255,255,0.4);
+}
+
+.agreement-box input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--text-dark);
+}
+
+.agreement-box label {
+    margin-bottom: 0;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* --- Buttons --- */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    cursor: pointer;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-cancel {
+    background-color: var(--white);
+    color: var(--text-dark);
+    border: 1px solid var(--text-dark);
+}
+
+.btn-cancel:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-submit {
+    background-color: var(--btn-submit-bg);
+    color: var(--white);
+    border: none;
+}
+
+.btn-submit:hover {
+    background-color: #0c7222;
+}
+
+.btn-submit:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 850px) {
+    .main-header {
+        flex-direction: column;
+        height: auto;
+        padding: 0;
+    }
+    .logo-area {
+        width: 100%;
+        height: 60px;
+    }
+    .nav-menu ul {
+        padding: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header-actions {
+        padding-bottom: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .form-row {
+        flex-direction: column;
+    }
+    .form-container {
+        padding: 30px 20px;
+    }
+}
