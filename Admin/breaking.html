@@ -1,113 +1,126 @@
 <html>
+
 <head>
   <title>Breaking News - NSBM NewsDesk Admin</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="layout">
+  <div class="layout">
 
-  <aside class="sidebar">
-    <div class="brand"><strong>NSBM</strong><small>NewsDesk Admin</small></div>
-    <nav aria-label="Admin">
-      <a href="Index.html">Dashboard</a>
-      <a href="submissions.html">Review Queue <span class="badge">12</span></a>
-      <a href="add-news.html">Add News</a>
-      <a href="breaking.html" class="active" aria-current="page">Breaking News</a>
-      <a href="users.html">Users &amp; Categories</a>
-    </nav>
-    <div class="sidebar-footer">
-      <a href="#">View public site</a>
-      <p>Faculty Admin<br><small>NewsDesk moderator</small></p>
-      <a href="#">Log out</a>
-    </div>
-  </aside>
-
-  <main class="content">
-    <header class="page-header">
-      <div>
-        <h1>Breaking News</h1>
-        <p>Post urgent campus updates. They appear under the Breaking News button on every page.</p>
+    <aside class="sidebar">
+      
+       <div class="brand">
+      <img src="logo.png" alt="NSBM logo" width="48" height="48">
+      
+      <div class="brand-text">
+        <strong>NSBM</strong>
+        <small>NewsDesk Admin</small>
       </div>
-    </header>
+    </div>
+      <nav aria-label="Admin">
+        <a href="Index.html">Dashboard</a>
+        <a href="submissions.html">Review Queue <span class="badge">12</span></a>
+        <a href="add-news.html">Add News</a>
+        <a href="breaking.html" class="active" aria-current="page">Breaking News</a>
+        <a href="users.html">Users &amp; Categories</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="#">View public site</a>
+        <p>Faculty Admin<br><small>NewsDesk moderator</small></p>
+        <a href="#">Log out</a>
+      </div>
+    </aside>
 
-    <div class="panels">
+    <main class="content">
+      <header class="page-header">
+        <div>
+          <h1>Breaking News</h1>
+          <p>Post urgent campus updates. They appear under the Breaking News button on every page.</p>
+        </div>
+      </header>
 
-      <section class="panel panel-main">
-        <h2>New breaking update</h2>
-        <form action="#" method="post">
-          <div class="form-field">
-            <label for="headline">Headline *</label>
-            <input id="headline" name="headline" type="text" placeholder="e.g. Lectures moved online tomorrow" required>
-          </div>
-          <div class="form-field">
-            <label for="description">Short description *</label>
-            <textarea id="description" name="description" rows="4" required></textarea>
-          </div>
-          <div class="form-field">
-            <label for="linked-article">Link to an approved article (optional)</label>
-            <select id="linked-article" name="linked_article">
-              <option value="">No linked article</option>
-              <option>Computing Faculty Hackathon 2026 Registration Open</option>
-              <option>Semester Exam Timetable Released</option>
-            </select>
-          </div>
-          <div class="form-row">
+      <div class="panels">
+
+        <section class="panel panel-main">
+          <h2>New breaking update</h2>
+          <form action="#" method="post">
             <div class="form-field">
-              <label for="banner">Banner image URL (optional)</label>
-              <input id="banner" name="banner" type="url" placeholder="https://images.unsplash.com/...">
+              <label for="headline">Headline *</label>
+              <input id="headline" name="headline" type="text" placeholder="e.g. Lectures moved online tomorrow"
+                required>
             </div>
             <div class="form-field">
-              <label for="expiry">Remove automatically</label>
-              <select id="expiry" name="expiry">
-                <option>After 24 hours</option>
-                <option>After 6 hours</option>
-                <option>After 3 days</option>
-                <option>Only when I take it down</option>
+              <label for="description">Short description *</label>
+              <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-field">
+              <label for="linked-article">Link to an approved article (optional)</label>
+              <select id="linked-article" name="linked_article">
+                <option value="">No linked article</option>
+                <option>Computing Faculty Hackathon 2026 Registration Open</option>
+                <option>Semester Exam Timetable Released</option>
               </select>
             </div>
-          </div>
-          <div class="button-row">
-            <button type="submit" class="btn-danger">Publish now</button>
-            <button type="button" class="btn-outline">Save as draft</button>
-          </div>
-        </form>
-      </section>
-
-      
-      <div class="panel-side">
-        <section class="panel">
-          <h2>How it looks on the site</h2>
-          <div class="breaking-preview">
-            <div class="breaking-preview-bar">NSBM BREAKING NEWS</div>
-            <div class="breaking-preview-body">
-              <div class="banner-placeholder">Image</div>
-              <div>
-                <strong>Your headline appears here</strong>
-                <p>The description you write shows below the headline.</p>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="banner">Banner image URL (optional)</label>
+                <input id="banner" name="banner" type="url" placeholder="https://images.unsplash.com/...">
+              </div>
+              <div class="form-field">
+                <label for="expiry">Remove automatically</label>
+                <select id="expiry" name="expiry">
+                  <option>After 24 hours</option>
+                  <option>After 6 hours</option>
+                  <option>After 3 days</option>
+                  <option>Only when I take it down</option>
+                </select>
               </div>
             </div>
-          </div>
+            <div class="button-row">
+              <button type="submit" class="btn-danger">Publish now</button>
+              <button type="button" class="btn-outline">Save as draft</button>
+            </div>
+          </form>
         </section>
 
-        <section class="panel">
-          <h2>Currently live</h2>
-          <p><span class="status">LIVE</span></p>
-          <p><strong>Heavy Rain Advisory: Check Your Lecture Schedule</strong><br><small>Posted today, 07:30 - Removes in 18 hours</small></p>
-          <button type="button" class="btn-danger">Take down</button>
-        </section>
 
-        <section class="panel">
-          <h2>Earlier updates</h2>
-          <ul>
-            <li>Registration Deadline Extended - 28 Oct - Expired</li>
-            <li>Main Gate Access Notice - 21 Oct - Taken down</li>
-          </ul>
-        </section>
+        <div class="panel-side">
+          <section class="panel">
+            <h2>How it looks on the site</h2>
+            <div class="breaking-preview">
+              <div class="breaking-preview-bar">NSBM BREAKING NEWS</div>
+              <div class="breaking-preview-body">
+                <div class="banner-placeholder">Image</div>
+                <div>
+                  <strong>Your headline appears here</strong>
+                  <p>The description you write shows below the headline.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2>Currently live</h2>
+            <p><span class="status">LIVE</span></p>
+            <p><strong>Heavy Rain Advisory: Check Your Lecture Schedule</strong><br><small>Posted today, 07:30 - Removes
+                in 18 hours</small></p>
+            <button type="button" class="btn-danger">Take down</button>
+          </section>
+
+          <section class="panel">
+            <h2>Earlier updates</h2>
+            <ul>
+              <li>Registration Deadline Extended - 28 Oct - Expired</li>
+              <li>Main Gate Access Notice - 21 Oct - Taken down</li>
+            </ul>
+          </section>
+        </div>
+
       </div>
+    </main>
 
-    </div>
-  </main>
-
-</div>
+  </div>
 </body>
+
 </html>
