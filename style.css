@@ -111,3 +111,41 @@ body {
     text-align: center;
     border-radius: 2px;
 }
+
+.content {
+    display: flex;
+    width: 100%;
+    max-width: 1300px;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+}
+
+.news-card {
+    background: rgba(70, 45, 45, 0.75);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    width: 600px;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.card-header h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.card-body p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: justify;
+    word-break: break-all;
+}
