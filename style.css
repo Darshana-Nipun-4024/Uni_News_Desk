@@ -76,3 +76,14 @@ body {
 .breaking-badge:active {
     transform: scale(0.98);
 }
+
+.login-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.login-link:hover {
+    color: #00a651;
+}
