@@ -1,0 +1,66 @@
+<head>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | NSBM NewsDesk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="index.html" aria-label="NSBM Green University Town home">
+            <span class="brand-mark"><span></span><span></span><span></span></span>
+            <span class="brand-name"><b>NSBM</b><small>GREEN<br>UNIVERSITY TOWN</small></span>
+        </a>
+        <nav class="main-nav">
+            <a href="index.html"><span class="nav-icon">⌂</span>Home</a>
+            <a href="#"><span class="nav-icon">⌕</span>Explore &amp; Search</a>
+            <a href="#"><span class="nav-icon">➤</span>Submit News</a>
+        </nav>
+        <a class="breaking" href="#"><span>▤</span> BREAKING NEWS</a>
+        <a class="login-link" href="index.html">Login / Register</a>
+    </header>
+
+    <main class="hero">
+        <section class="welcome">
+            <h1>Welcome Back</h1>
+            <p>Sign in to NSBM NewsDesk</p>
+        </section>
+
+        <section class="login-card">
+            <a class="brand card-brand" href="index.html" aria-label="NSBM Green University Town">
+                <span class="brand-mark"><span></span><span></span><span></span></span>
+                <span class="brand-name"><b>NSBM</b><small>GREEN<br>UNIVERSITY TOWN</small></span>
+            </a>
+            <div class="avatar" aria-hidden="true">
+                <div class="avatar-head"></div>
+                <div class="avatar-body"></div>
+            </div>
+
+            <form id="loginForm" action="login.php" method="POST" novalidate>
+                <label for="email">University Email</label>
+                <input type="email" id="email" name="email"
+                       placeholder="student@students.nsbm.ac.lk" autocomplete="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"
+                       placeholder="********" autocomplete="current-password" required>
+
+                <div class="form-options">
+                    <label class="remember">
+                        <input type="checkbox" name="remember" value="1">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="forgot-password.php">Forgot password?</a>
+                </div>
+                <p class="form-error" id="formError" aria-live="polite"></p>
+                <button class="sign-in" type="submit">Sign In</button>
+            </form>
+
+            <div class="register-prompt">
+                <p>No account?</p>
+                <a href="register.php">Register</a>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
