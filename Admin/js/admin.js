@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     actions: document.getElementById("detail-actions"),
     decided: document.getElementById("detail-decided"),
     note: document.getElementById("detail-note"),
+    content: document.getElementById("detail-content"),
+    empty: document.getElementById("detail-empty"),
   };
   let selected = rows[0];
 
@@ -26,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showDetail(row) {
     selected = row;
+    detail.content.hidden = false;
+    detail.empty.hidden = true;
     rows.forEach((r) => r.classList.toggle("selected", r === row));
     detail.category.textContent = row.dataset.category;
     detail.title.textContent = row.dataset.title;
@@ -54,6 +58,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   rows.forEach((r) => r.addEventListener("click", () => showDetail(r)));
   tabs.forEach((t) => t.addEventListener("click", () => applyFilter(t.dataset.filter)));
+
+  if (!selected) {
+    applyFilter("pending");
+    return;
+  }
+
   document.getElementById("btn-approve").addEventListener("click", () => setStatus("approved"));
   document.getElementById("btn-reject").addEventListener("click", () => setStatus("rejected"));
   document.getElementById("btn-reopen").addEventListener("click", () => setStatus("pending"));
