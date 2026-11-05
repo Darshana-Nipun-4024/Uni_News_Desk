@@ -1,5 +1,3 @@
-// Add News - image upload previews (front-end only)
-// The files are sent with the form (multipart/form-data) when you connect a backend.
 
 document.addEventListener("DOMContentLoaded", () => {
   const MAX_SIZE = 5 * 1024 * 1024; // 5 MB
@@ -31,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   }
 
-  // Build one thumbnail with an optional remove button
+  // Build one thumbnail with remove button
   function makeThumb(file, onRemove) {
     const figure = document.createElement("figure");
     figure.className = "image-thumb";
@@ -54,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return figure;
   }
 
-  // ----- Banner (single image) -----
+  // Banner
   bannerInput.addEventListener("change", () => {
     showError("");
     bannerPreview.innerHTML = "";
@@ -72,9 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  // ----- Gallery (many images) -----
+  // Gallery imagers
   function syncGalleryInput() {
-    // Put our list back into the real input so the form submits it
+    // Put our list back into the real input 
     const dt = new DataTransfer();
     galleryFiles.forEach((f) => dt.items.add(f));
     galleryInput.files = dt.files;
@@ -106,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderGallery();
   });
 
-  // Clear previews when the form is reset
+  // Clear preview whenever the form resets
   form.addEventListener("reset", () => {
     galleryFiles = [];
     bannerPreview.innerHTML = "";
