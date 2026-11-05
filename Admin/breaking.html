@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="dashboard-page">
   <div class="layout">
 
     <aside class="sidebar">
@@ -20,14 +20,13 @@
     </div>
       <nav aria-label="Admin">
         <a href="Index.html">Dashboard</a>
-        <a href="submissions.html">Review Queue <span class="badge">12</span></a>
+        <a href="submissions.html">Review Queue</a>
         <a href="add-news.html">Add News</a>
         <a href="breaking.html" class="active" aria-current="page">Breaking News</a>
-        <a href="users.html">Users &amp; Categories</a>
+        <a href="users.html">Categories</a>
       </nav>
       <div class="sidebar-footer">
-        <a href="#">View public site</a>
-        <p>Faculty Admin<br><small>NewsDesk moderator</small></p>
+        <a href="#">View site</a>
         <a href="#">Log out</a>
       </div>
     </aside>
@@ -47,8 +46,7 @@
           <form action="#" method="post">
             <div class="form-field">
               <label for="headline">Headline *</label>
-              <input id="headline" name="headline" type="text" placeholder="e.g. Lectures moved online tomorrow"
-                required>
+              <input id="headline" name="headline" type="text" required>
             </div>
             <div class="form-field">
               <label for="description">Short description *</label>
@@ -58,14 +56,12 @@
               <label for="linked-article">Link to an approved article (optional)</label>
               <select id="linked-article" name="linked_article">
                 <option value="">No linked article</option>
-                <option>Computing Faculty Hackathon 2026 Registration Open</option>
-                <option>Semester Exam Timetable Released</option>
               </select>
             </div>
             <div class="form-row">
               <div class="form-field">
                 <label for="banner">Banner image URL (optional)</label>
-                <input id="banner" name="banner" type="url" placeholder="https://images.unsplash.com/...">
+                <input id="banner" name="banner" type="url">
               </div>
               <div class="form-field">
                 <label for="expiry">Remove automatically</label>
@@ -87,33 +83,13 @@
 
         <div class="panel-side">
           <section class="panel">
-            <h2>How it looks on the site</h2>
-            <div class="breaking-preview">
-              <div class="breaking-preview-bar">NSBM BREAKING NEWS</div>
-              <div class="breaking-preview-body">
-                <div class="banner-placeholder">Image</div>
-                <div>
-                  <strong>Your headline appears here</strong>
-                  <p>The description you write shows below the headline.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="panel">
             <h2>Currently live</h2>
-            <p><span class="status">LIVE</span></p>
-            <p><strong>Heavy Rain Advisory: Check Your Lecture Schedule</strong><br><small>Posted today, 07:30 - Removes
-                in 18 hours</small></p>
-            <button type="button" class="btn-danger">Take down</button>
+            <p>No breaking news is currently live.</p>
           </section>
 
           <section class="panel">
             <h2>Earlier updates</h2>
-            <ul>
-              <li>Registration Deadline Extended - 28 Oct - Expired</li>
-              <li>Main Gate Access Notice - 21 Oct - Taken down</li>
-            </ul>
+            <p>No earlier updates.</p>
           </section>
         </div>
 
