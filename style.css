@@ -147,6 +147,15 @@ body {
 .card-body p {
     font-size: 0.95rem;
     line-height: 1.6;
+    padding: 10px;
     text-align: justify;
     word-break: break-all;
+
+}
+
+.card-image {
+  width: 100%;       
+  height: 200px;     
+  object-fit: cover; 
+  display: block;
 }
