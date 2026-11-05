@@ -1,4 +1,4 @@
-/* ---------- Reset ---------- */
+/*Reset*/
 * {
   box-sizing: border-box;
 }
@@ -72,7 +72,7 @@ svg.icon {
   outline-offset: 2px;
 }
 
-/* Page layout: sidebar + content  */
+/* Page layout,sidebar,content  */
 
 .layout {
   display: flex;
@@ -263,7 +263,7 @@ svg.icon {
   color: #51655a;
 }
 
-/* search pill in page header */
+/* search pill */
 .search {
   position: relative;
   width: 300px;
@@ -287,7 +287,7 @@ svg.icon {
   background: #fff;
 }
 
-/* ---------- Cards ---------- */
+/* Cards */
 .panel,
 .stat-card {
   background: #ffffff;
@@ -301,7 +301,7 @@ body.dashboard-page .stat-card {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* ---------- Dashboard ---------- */
+/*Dashboard */
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -581,7 +581,7 @@ progress::-moz-progress-bar {
   align-self: flex-start;
 }
 
-/* ---------- Tables ---------- */
+/* Tables */
 .table-wrap {
   overflow-x: auto;
 }
@@ -635,7 +635,7 @@ td:nth-child(4) {
   white-space: nowrap;
 }
 
-/* ---------- Tags and status pills ---------- */
+/*Tags & status pills */
 .tag,
 .status {
   display: inline-block;
@@ -726,7 +726,7 @@ td:nth-child(4) {
   color: #14602a;
 }
 
-/* ---------- Tabs / filters ---------- */
+/*Tabs filters */
 .tabs {
   display: flex;
   flex-wrap: wrap;
@@ -754,7 +754,7 @@ td:nth-child(4) {
   color: #fff;
 }
 
-/* ---------- Forms ---------- */
+/* Forms */
 .form-field {
   display: flex;
   flex-direction: column;
@@ -936,7 +936,7 @@ button,
   margin-bottom: 0;
 }
 
-/* ---------- Image upload previews (Add News) ---------- */
+/* Image upload */
 .image-previews {
   display: flex;
   flex-wrap: wrap;
@@ -982,7 +982,7 @@ button,
   margin-bottom: 12px;
 }
 
-/* ---------- Review queue: list + detail ---------- */
+/*Review queue: list detail */
 .review {
   display: flex;
   flex-wrap: wrap;
@@ -1137,7 +1137,7 @@ button,
   font-weight: 600;
 }
 
-/* ---------- Breaking news preview ---------- */
+/* Breaking news preview */
 .breaking-preview {
   border: 1px solid #d5dfd4;
   border-radius: 12px;
@@ -1210,7 +1210,7 @@ button,
   color: #51655a;
 }
 
-/* ---------- Users & categories ---------- */
+/*Users & categories */
 .users-note {
   font-size: 13px;
   color: #51655a;
@@ -1279,7 +1279,7 @@ button,
   align-items: flex-start;
 }
 
-/* ---------- Small screens ---------- */
+/*Small screens */
 @media (max-width: 800px) {
   .layout {
     flex-direction: column;
@@ -1320,7 +1320,7 @@ button,
   }
 }
 
-/* Breaking news: form and preview share the width roughly evenly */
+/* Breaking news */
 .panels-even .panel-main {
   flex: 1 1 420px;
 }
