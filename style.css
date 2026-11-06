@@ -92,10 +92,13 @@ body {
     position: relative;
     width: 100%;
     min-height: calc(100vh - 71px);
+    max-height: calc(100vh - 71px);
+    overflow: hidden;
     background: url('Background.jpg.jpeg') no-repeat center center/cover; 
     display: flex; 
     flex-direction: column;
-    align-items: center;
+    
+    
 }
 
 .heading {
@@ -127,13 +130,15 @@ body {
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-    width: 600px;
+    width: 800px;
+    max-height: 85vh;
     overflow: hidden;
     color: white;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     z-index: 2;
     display: flex;
     flex-direction: column;
+    margin-left: 50px;
 }
 
 .card-image {
@@ -141,10 +146,11 @@ body {
     height: 250px;       
     object-fit: cover;   
     display: block;
+    padding: 10px;
 }
 
 .card-content-wrapper {
-    padding: 25px;
+    padding: 12px 25px 25px 25px
 }
 
 .card-header h2 {
@@ -152,12 +158,12 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     text-decoration: underline;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     letter-spacing: 1px;
 }
 
 .card-body {
-    max-height: 200px;   /* Controls how tall the text box is before a scrollbar appears */
+    max-height: 140px;   /* Controls how tall the text box is before a scrollbar appears */
     overflow-y: auto;    /* Enables the smooth vertical scrollbar when text exceeds max-height */
     padding-right: 10px;
 }
