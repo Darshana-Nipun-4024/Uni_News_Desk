@@ -164,8 +164,8 @@ body {
 }
 
 .card-body {
-    max-height: 140px;   /* Controls how tall the text box is before a scrollbar appears */
-    overflow-y: auto;    /* Enables the smooth vertical scrollbar when text exceeds max-height */
+    max-height: 140px;   
+    overflow-y: auto;  
     padding-right: 10px;
 }
 
