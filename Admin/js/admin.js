@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //Click events
+  // events
   rows.forEach((r) => r.addEventListener("click", () => showDetail(r)));
   tabs.forEach((t) => t.addEventListener("click", () => applyFilter(t.dataset.filter)));
 
