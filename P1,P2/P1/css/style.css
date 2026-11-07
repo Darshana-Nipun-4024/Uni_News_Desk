@@ -1,7 +1,8 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body { font-family: Arial, sans-serif; color: #222; }
-a { text-decoration: none; color: inherit; }
+body {  font-family: Arial, sans-serif; color: #222; }
+a { text-decoration: none; color: inherit; 
+background: #f1f1f1; }
 
 /* ---------- Navbar ---------- */
 .navbar {
@@ -18,11 +19,11 @@ a { text-decoration: none; color: inherit; }
 .login-link { font-size: 18px; }
 
 /* ---------- Home page background ---------- */
-/* Put a campus photo at images/campus.jpg to replace the green gradient */
+/* Put a campus photo at images/campus.jpg to replace thse green gradient */
 .page-bg {
   position: relative;
   padding: 30px 40px 40px;
-  background: url("../images/campus.jpg") center / cover,
+  background: url("../images/nsbm-campus.jpg") center / cover,
               linear-gradient(135deg, #2e7d32, #7cb342, #1565c0);
 }
 
