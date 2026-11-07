@@ -23,7 +23,7 @@ background: #f1f1f1; }
 .page-bg {
   position: relative;
   padding: 30px 40px 40px;
-  background: url("../images/nsbm-campus.jpg") center / cover,
+  background: url("nsbm-campus.jpg") center / cover,
               linear-gradient(135deg, #2e7d32, #7cb342, #1565c0);
 }
 
