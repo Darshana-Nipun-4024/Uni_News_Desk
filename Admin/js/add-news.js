@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderGallery();
   });
 
-  // Clear preview whenever the form resets
+
   form.addEventListener("reset", () => {
     galleryFiles = [];
     bannerPreview.innerHTML = "";
