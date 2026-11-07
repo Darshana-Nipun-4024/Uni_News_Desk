@@ -1,0 +1,65 @@
+
+<html>
+<head>
+  
+  <title>Categories - NSBM NewsDesk Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="logo.png" alt="NSBM logo" width="48" height="48">
+      <div class="brand-text">
+        <strong>NSBM</strong>
+        <small>NewsDesk Admin</small>
+      </div>
+    </div>
+    <nav aria-label="Admin">
+      <a href="Index.html">Dashboard</a>
+      <a href="submissions.html">Review Queue</a>
+      <a href="add-news.html">Add News</a>
+      <a href="breaking.html">Breaking News</a>
+      <a href="users.html" class="active" aria-current="page">Categories</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#">View site</a>
+      <a href="#">Log out</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <header class="page-header">
+      <div>
+        <h1>Categories</h1>
+      </div>
+    </header>
+
+    <div class="panels">
+
+      <section class="panel panel-main">
+        <h2>Categories</h2>
+        <ul>
+          <li>Sport <button type="button" class="btn-outline">Edit</button></li>
+          <li>Academic <button type="button" class="btn-outline">Edit</button></li>
+          <li>Event <button type="button" class="btn-outline">Edit</button></li>
+          <li>General <button type="button" class="btn-outline">Edit</button></li>
+          <li>Clubs <button type="button" class="btn-outline">Edit</button></li>
+        </ul>
+        <form action="#" method="post">
+          <div class="form-field">
+            <label for="new-category">New category name</label>
+            <input id="new-category" name="category" type="text">
+          </div>
+          <button type="submit" class="btn-primary">Add</button>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+</div>
+</body>
+</html>
