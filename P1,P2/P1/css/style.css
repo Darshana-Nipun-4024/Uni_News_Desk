@@ -60,3 +60,17 @@ background: #f1f1f1; }
 .footer h3 { color: #1b6b1b; margin-bottom: 15px; }
 .footer p { margin-bottom: 12px; line-height: 1.4; }
 .footer-logo { height: 70px; }
+/* ---------- Search results page ---------- */
+.results-page { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+.results-page h1 { margin-bottom: 15px; }
+.search-box.inline { margin: 0 0 20px 0; width: 100%; border: 1px solid #ccc; }
+.news-item { border-bottom: 1px solid #ddd; padding: 15px 0; }
+.news-item small { color: #1b6b1b; font-weight: bold; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 800px) {
+  .navbar { flex-wrap: wrap; padding: 10px 15px; }
+  .hero { flex-direction: column; }
+  .hero h1 { font-size: 48px; }
+  .hero-logo { height: 120px; }
+}
