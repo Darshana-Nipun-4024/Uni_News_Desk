@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NSBM NewsDesk</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <a href="index.html"><img src="images/logo.png" alt="NSBM Green University Town" class="nav-logo"></a>
+  <nav class="nav-links">
+    <a href="index.html">&#8962;<br>Home</a>
+    <a href="search.htmsl">&#128269;<br>Explore &amp; Search</a>
+    <a href="#">&#9992;<br>Submit News</a>
+  </nav>
+  <a href="#" class="breaking">&#9776; BREAKING NEWS</a>
+  <a href="login.html" class="login-link">&#10142; Login / Register</a>
+</header>
+<main class="page-bg">
+
+  <form action="search.html" method="get" class="search-box" onsubmit="return checkSearch()">
+    <input type="text" name="q" id="searchInput" placeholder="Search....">
+    <button type="submit">&#128269;</button>
+  </form>
+  <section class="hero">
+    <div>
+      <h1>NSBM<br>NEWSDESK</h1>
+      <h2>Welcome to NSBM NewsDesk!</h2>
+      <p class="tagline">Your Ultimate Hub for Campus News, Events &amp; Announcements.</p>
+      <p>Stay connected with everything happening around NSBM Green University! From official
+         academic notices and upcoming club events to student stories and breaking campus news,
+         NSBM NewsDesk brings all updates right to your fingertips. Explore stories, stay informed,
+         and engage with the vibrant campus community today!</p>
+    </div>
+    <img src="images/logo-big.png" alt="NSBM logo" class="hero-logo">
+  </section>
+  <section class="categories">
+    <a class="card" href="search.html?category=Sport"><h3>Sport</h3><img src="images/sport.jpg" alt="Sport"></a>
+    <a class="card" href="search.html?category=Academic"><h3>Academic</h3><img src="images/academic.jpg" alt="Academic"></a>
+    <a class="card" href="search.html?category=Event"><h3>Event</h3><img src="images/event.jpg" alt="Event"></a>
+    <a class="card" href="search.html?category=General"><h3>General</h3><img src="images/general.jpg" alt="General"></a>
+    <a class="card" href="search.html?category=Clubs"><h3>Clubs</h3><img src="images/clubs.jpg" alt="Clubs"></a>
+  </section>
+
+</main>
+<footer class="footer">
+  <div>
+    <h3>NSBM Green University</h3>
+    <p>Faculty of Computing<br>Web and Mobile Application Development</p>
+    <p>Module Project Assignment<br>Batch: 26.1 IFSL</p>
+  </div>
+  <div>
+    <h3>System Quick Links</h3>
+    <p><a href="index.html">Home Feed</a></p>
+    <p><a href="search.html">Academic Categories</a></p>
+    <p><a href="#">Submit Article</a></p>
+    <p><a href="#">Admin Console</a></p>
+  </div>
+   <div>
+    <h3>Connect &amp; Support</h3>
+    <p>Pitipana, Homagama, Sri Lanka</p>
+    <img src="images/logo.png" alt="NSBM logo" class="footer-logo">
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
