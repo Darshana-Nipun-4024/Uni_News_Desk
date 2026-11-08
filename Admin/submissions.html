@@ -1,0 +1,110 @@
+<html>
+
+<head>
+  <title>Review Queue - NSBM NewsDesk Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="logo.png" alt="NSBM logo" width="48" height="48">
+
+        <div class="brand-text">
+          <strong>NSBM</strong>
+          <small>NewsDesk Admin</small>
+        </div>
+      </div>
+      <nav aria-label="Admin">
+        <a href="Index.html">Dashboard</a>
+        <a href="submissions.html" class="active" aria-current="page">Review Queue</a>
+        <a href="add-news.html">Add News</a>
+        <a href="breaking.html">Breaking News</a>
+        <a href="users.html">Categories</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="#">View site</a>
+        <a href="#">Log out</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="page-header">
+        <div>
+          <h1>Review Queue</h1>
+          <p>Articles from the Student &amp; Club Portal wait here until you approve them.</p>
+        </div>
+      </header>
+
+      <div class="review">
+
+        <section class="panel review-list">
+          <div class="tabs" role="group" aria-label="Filter submissions">
+            <button type="button" data-filter="pending" class="active">Pending</button>
+            <button type="button" data-filter="approved">Approved</button>
+            <button type="button" data-filter="rejected">Rejected</button>
+            <button type="button" data-filter="all">All</button>
+          </div>
+
+          <div class="table-wrap">
+            <table id="submissions-table">
+              <thead>
+                <tr>
+                  <th>Article</th>
+                  <th>Category</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td colspan="3">No submissions yet.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+
+        <section class="panel review-detail">
+          <p id="detail-empty" class="review-empty">Select a submission to review.</p>
+          <div id="detail-content" hidden>
+            <p>
+              <span id="detail-category" class="tag"></span>
+              <span id="detail-status" class="status"></span>
+            </p>
+            <h2 id="detail-title"></h2>
+            <p id="detail-meta"></p>
+            <div class="banner-placeholder">Featured banner image preview</div>
+            <p id="detail-body"></p>
+
+            <div id="detail-actions">
+              <div class="form-field">
+                <label for="feedback">Feedback to the author (optional)</label>
+                <textarea id="feedback" rows="3"
+                  placeholder="Explain what needs to change if you reject this article"></textarea>
+              </div>
+              <label><input type="checkbox" id="make-breaking"> Also feature this as Breaking News</label>
+              <div class="button-row">
+                <button type="button" id="btn-approve" class="btn-success">Approve &amp; publish</button>
+                <button type="button" id="btn-reject" class="btn-danger">Reject</button>
+              </div>
+            </div>
+
+            <div id="detail-decided" hidden>
+              <span id="detail-note"></span>
+              <button type="button" id="btn-reopen" class="btn-outline">Move back to pending</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+  <script src="js/admin.js"></script>
+</body>
+
+</html>
