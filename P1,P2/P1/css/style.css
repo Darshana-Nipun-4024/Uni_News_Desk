@@ -16,3 +16,18 @@ background: #f1f1f1; }
   padding: 12px 25px; border-radius: 30px;
 }
 .login-link { font-size: 18px; }
+/* ---------- Home page background ---------- */
+/* Put a campus photo at images/campus.jpg to replace thse green gradient */
+.page-bg {
+  position: relative;
+  padding: 30px 40px 40px;
+  background: url("nsbm-campus.jpg") center / cover,
+              linear-gradient(135deg, #2e7d32, #7cb342, #1565c0);
+}
+
+.search-box {
+  display: flex; width: 300px; margin-left: auto;
+  background: #f1f1f1; border-radius: 30px; overflow: hidden;
+}
+.search-box input { flex: 1; border: none; background: none; padding: 12px 18px; font-size: 16px; outline: none; }
+.search-box button { border: none; background: none; padding: 0 15px; font-size: 18px; cursor: pointer; }
