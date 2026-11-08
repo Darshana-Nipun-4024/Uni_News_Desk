@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit News - NSBM NewsDesk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Green Header Section -->
+    <header class="main-header">
+        <div class="logo-wrapper">
+            <div class="logo">
+                <img src="nsbmlogo.png" alt="NSBM Logo" style="height: 30px;">
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="P1,P2,P3,P4\P1\index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="explore.html"><i class="fas fa-search"></i> Explore & Search</a></li>
+                <li><a href="submit.html" class="active"><i class="far fa-paper-plane"></i> Submit News</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-right">
+            <button class="btn-breaking">
+                <i class="far fa-newspaper"></i> BREAKING NEWS
+            </button>
+            <a href="#" class="login-link">Login / Register</a>
+        </div>
+    </header>
+
+    <!-- Main Form Section -->
+    <main class="form-main">
+        <div class="form-container">
+            
+            <span class="portal-tag">Student & Club Portal</span>
+            
+            <h1 class="form-title">Submit News Article or Announcement</h1>
+            <p class="form-subtitle">Submitted articles undergo review by the Faculty NewsDesk Admin before being published live.</p>
+            
+            <hr class="divider">
+
+            <form id="newsForm" action="submit_handler.php" method="POST">
+                
+                <!-- Article Title -->
+                <div class="form-group">
+                    <label for="title">Article Title *</label>
+                    <input type="text" id="title" name="title" placeholder="e.g. Computing Faculty Hackathon 2026 Registration Open" required>
+                </div>
+
+                <!-- Row: Category & Author -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="category">Category *</label>
+                        <select id="category" name="category" required>
+                            <option value="" disabled selected></option>
+                            <option value="general">General</option>
+                            <option value="academic">Academic</option>
+                            <option value="sports">Sports</option>
+                            <option value="events">Events</option>
+                            <option value="clubs">Clubs & Societies</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author / Club / Student Society *</label>
+                        <input type="text" id="author" name="author" placeholder="e.g. Software Engineering Society" required>
+                    </div>
+                </div>
+
+                <!-- Banner Image URL -->
+                <div class="form-group">
+                    <label for="imageUrl">Featured Banner Image URL (Optional)</label>
+                    <input type="url" id="imageUrl" name="imageUrl" placeholder="https://images.unsplash.com/...">
+                    <small class="helper-text">Provide an image link to represent your article visually.</small>
+                </div>
+
+                <!-- Article Description -->
+                <div class="form-group">
+                    <label for="content">Article Full Description / Content *</label>
+                    <textarea id="content" name="content" rows="6" placeholder="Write the complete details of the announcement, event date, venue, registration links, etc..." required></textarea>
+                </div>
+
+                <!-- Compliance Checkbox -->
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" id="compliance" name="compliance" required>
+                        <span>I confirm that the submitted content complies with NSBM Green University media policies.</span>
+                    </label>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-cancel" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn btn-submit">Submit for Approval</button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
