@@ -1,40 +1,49 @@
 <?php
+// Include required database connection and helper function files
 require_once 'includes/db_connect.php';
 require_once 'includes/functions.php';
 
+// Get search and filter parameters from the URL query string (GET request)
 $q = trim($_GET['q'] ?? '');
 $category = $_GET['category'] ?? '';
 $date_from = $_GET['date_from'] ?? '';
 $date_to = $_GET['date_to'] ?? '';
 
+// Fetch all categories from the database to populate the category dropdown filter
 $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
 
-
+// Base SQL query to fetch approved articles along with their category names using a LEFT JOIN
 $sql = "SELECT a.*, c.name AS category_name FROM articles a 
         LEFT JOIN categories c ON a.category_id = c.category_id
         WHERE a.status = 'approved'";
 $params = [];
 
+// If a search keyword is provided, add a condition to filter by title or content
 if ($q) {
     $sql .= " AND (a.title LIKE ? OR a.content LIKE ?)";
     $params[] = "%$q%";
     $params[] = "%$q%";
 }
+// If a category filter is selected, add a condition to match the category slug
 if ($category) {
     $sql .= " AND c.slug = ?";
     $params[] = $category;
 }
+// If a starting date is provided, filter articles created on or after that date
 if ($date_from) {
     $sql .= " AND DATE(a.created_at) >= ?";
     $params[] = $date_from;
 }
+// If an ending date is provided, filter articles created on or before that date
 if ($date_to) {
     $sql .= " AND DATE(a.created_at) <= ?";
     $params[] = $date_to;
 }
 
+// Order the search results by creation date in descending order
 $sql .= " ORDER BY a.created_at DESC";
 
+// Prepare and execute the dynamic SQL query with the bound parameters
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $results = $stmt->fetchAll();
