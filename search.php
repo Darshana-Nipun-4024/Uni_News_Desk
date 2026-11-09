@@ -24,6 +24,7 @@ if ($q) {
     $params[] = "%$q%";
     $params[] = "%$q%";
 }
+// If a category filter is selected, add a condition to match the category slug
 if ($category) {
     $sql .= " AND c.slug = ?";
     $params[] = $category;
