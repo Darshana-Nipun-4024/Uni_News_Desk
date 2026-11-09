@@ -69,14 +69,13 @@ if (!isset($base_path)) {
                 </div>
             </div>
 
-            <!-- Bottom Copyright Bar -->
             <div class="footer-bottom">
-                <p>&copy; <?= date('Y'); ?> <strong>NSBM NewsDesk</strong>. All Rights Reserved | Faculty of Computing Project</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <span>•</span>
-                    <a href="#">Terms of Service</a>
-                </div>
+    <p>&copy; <?= date('Y'); ?> <strong>NSBM NewsDesk</strong>. All Rights Reserved | Faculty of Computing Project</p>
+    <div class="footer-bottom-links">
+        <a href="privacy.php">Privacy Policy</a>
+        <span>•</span>
+        <a href="terms.php">Terms of Service</a>
+    </div>
             </div>
         </div>
     </footer>
