@@ -1,4 +1,5 @@
 <?php
+// Include required database connection and helper function files
 require_once 'includes/db_connect.php';
 require_once 'includes/functions.php';
 
