@@ -39,7 +39,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $results = $stmt->fetchAll();
 ?>
-<!DOCTYPE html>
+
 <html>
 <head>
     <title>Search - NSBM NewsDesk</title>
