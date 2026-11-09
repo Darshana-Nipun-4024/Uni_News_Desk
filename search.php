@@ -18,6 +18,7 @@ $sql = "SELECT a.*, c.name AS category_name FROM articles a
         WHERE a.status = 'approved'";
 $params = [];
 
+// If a search keyword is provided, add a condition to filter by title or content
 if ($q) {
     $sql .= " AND (a.title LIKE ? OR a.content LIKE ?)";
     $params[] = "%$q%";
