@@ -9,6 +9,7 @@ $category = $_GET['category'] ?? '';
 $date_from = $_GET['date_from'] ?? '';
 $date_to = $_GET['date_to'] ?? '';
 
+// Fetch all categories from the database to populate the category dropdown filter
 $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
 
 
