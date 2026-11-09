@@ -3,6 +3,7 @@
 require_once 'includes/db_connect.php';
 require_once 'includes/functions.php';
 
+// Get search and filter parameters from the URL query string (GET request)
 $q = trim($_GET['q'] ?? '');
 $category = $_GET['category'] ?? '';
 $date_from = $_GET['date_from'] ?? '';
