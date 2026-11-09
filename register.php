@@ -32,8 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php if($success): ?><div class="alert success"><?= $success ?></div><?php endif; ?>
         <form method="POST">
             <input type="text" name="full_name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="NSBM Email" required>
-            <input type="text" name="student_id" placeholder="Student ID">
+            <input type="email"  name="email"  placeholder="NSBM Email"  pattern="[a-zA-Z0-9._%+\-]+@students\.nsbm\.ac\.lk$" title="Please enter a valid NSBM student email (e.g., name@students.nsbm.ac.lk)" required>
+        <input type="text" name="student_id" placeholder="Student ID" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required
+>
             <input type="text" name="faculty" placeholder="Faculty">
             <input type="password" name="password" placeholder="Password" required minlength="6">
             <button type="submit">Register</button>
