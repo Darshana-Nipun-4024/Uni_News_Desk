@@ -1,20 +1,28 @@
 <?php
+// Include necessary database connection, authentication checks, and helper functions
 require_once 'includes/db_connect.php';
 require_once 'includes/auth_check.php';
 require_once 'includes/functions.php';
+
+// Ensure the user is logged in before allowing access to this page
 requireLogin();
 
+// Fetch all categories from the database for the dropdown selection
 $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
 $msg = '';
 
+// Check if the form has been submitted via POST method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Sanitize user inputs to prevent security issues like XSS/SQL injection
     $title = sanitize($_POST['title']);
     $content = sanitize($_POST['content']);
     $category_id = (int)$_POST['category_id'];
     $author = sanitize($_POST['author']);
     $image = sanitize($_POST['image_url']);
 
+    // Prepare an SQL statement to insert the new article with 'pending' status
     $stmt = $pdo->prepare("INSERT INTO articles (title, content, category_id, author_id, author_name, image_url, status) VALUES (?, ?, ?, ?, ?, ?, 'pending')");
+    // Execute the query and set a success message if successful
     if ($stmt->execute([$title, $content, $category_id, $_SESSION['user_id'], $author, $image])) {
         $msg = "Article submitted successfully! It will be reviewed by the admin.";
     }
