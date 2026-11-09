@@ -34,6 +34,7 @@ if ($date_from) {
     $sql .= " AND DATE(a.created_at) >= ?";
     $params[] = $date_from;
 }
+// If an ending date is provided, filter articles created on or before that date
 if ($date_to) {
     $sql .= " AND DATE(a.created_at) <= ?";
     $params[] = $date_to;
