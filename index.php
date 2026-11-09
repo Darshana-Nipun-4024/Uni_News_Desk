@@ -5,7 +5,6 @@ require_once 'includes/functions.php';
 
 $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
 
-// Fetch latest approved articles
 $latest = $pdo->query("SELECT a.*, c.name AS category_name 
                        FROM articles a 
                        LEFT JOIN categories c ON a.category_id = c.category_id 
@@ -25,7 +24,6 @@ $latest = $pdo->query("SELECT a.*, c.name AS category_name
 
 <?php include 'includes/header.php'; ?>
 
-<!-- HERO SECTION -->
 <section class="hero">
     <div class="hero-overlay"></div>
     
@@ -54,7 +52,6 @@ $latest = $pdo->query("SELECT a.*, c.name AS category_name
     </div>
 </section>
 
-<!-- CATEGORY CARDS -->
 <section class="category-section">
     <div class="container">
         <div class="category-grid">
