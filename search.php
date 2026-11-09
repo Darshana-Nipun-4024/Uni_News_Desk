@@ -43,6 +43,7 @@ if ($date_to) {
 // Order the search results by creation date in descending order
 $sql .= " ORDER BY a.created_at DESC";
 
+// Prepare and execute the dynamic SQL query with the bound parameters
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $results = $stmt->fetchAll();
