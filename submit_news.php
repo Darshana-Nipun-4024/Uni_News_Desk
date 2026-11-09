@@ -7,6 +7,7 @@ require_once 'includes/functions.php';
 // Ensure the user is logged in before allowing access to this page
 requireLogin();
 
+// Fetch all categories from the database for the dropdown selection
 $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
 $msg = '';
 
