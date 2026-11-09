@@ -12,7 +12,7 @@ $date_to = $_GET['date_to'] ?? '';
 // Fetch all categories from the database to populate the category dropdown filter
 $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
 
-
+// Base SQL query to fetch approved articles along with their category names using a LEFT JOIN
 $sql = "SELECT a.*, c.name AS category_name FROM articles a 
         LEFT JOIN categories c ON a.category_id = c.category_id
         WHERE a.status = 'approved'";
