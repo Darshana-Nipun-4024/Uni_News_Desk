@@ -11,6 +11,7 @@ requireLogin();
 $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
 $msg = '';
 
+// Check if the form has been submitted via POST method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = sanitize($_POST['title']);
     $content = sanitize($_POST['content']);
