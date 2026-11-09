@@ -13,6 +13,7 @@ $msg = '';
 
 // Check if the form has been submitted via POST method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Sanitize user inputs to prevent security issues like XSS/SQL injection
     $title = sanitize($_POST['title']);
     $content = sanitize($_POST['content']);
     $category_id = (int)$_POST['category_id'];
