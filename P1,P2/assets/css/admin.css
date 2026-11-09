@@ -1,0 +1,100 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Poppins',sans-serif; background:#f0f4f0; }
+
+.admin-wrapper { display:flex; min-height:100vh; }
+
+.sidebar {
+    width:250px;
+    background:linear-gradient(180deg,#0d5c1c,#1a8c2f);
+    color:white;
+    padding:25px 0;
+}
+
+.sidebar h2 {
+    padding:0 25px 25px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    font-size:20px;
+}
+
+.sidebar nav { display:flex; flex-direction:column; margin-top:20px; }
+
+.sidebar a {
+    padding:14px 25px;
+    color:rgba(255,255,255,0.85);
+    text-decoration:none;
+    transition:0.3s;
+    border-left:4px solid transparent;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background:rgba(255,255,255,0.1);
+    border-left-color:white;
+    color:white;
+}
+
+.sidebar a i { width:20px; margin-right:10px; }
+
+.admin-main { flex:1; padding:35px; }
+
+.admin-main h1 { color:#0d5c1c; margin-bottom:25px; }
+
+.stats-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.stat-card {
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    text-align:center;
+    border-top:4px solid;
+}
+
+.stat-card.green { border-color:#1a8c2f; }
+.stat-card.orange { border-color:#ff9800; }
+.stat-card.blue { border-color:#2196f3; }
+.stat-card.purple { border-color:#9c27b0; }
+
+.stat-card i {
+    font-size:36px;
+    margin-bottom:10px;
+    color:#1a8c2f;
+}
+
+.stat-card h3 { font-size:32px; color:#0d5c1c; }
+.stat-card p { color:#666; font-size:14px; margin-top:5px; }
+
+.admin-table {
+    width:100%;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    margin-top:20px;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    background:#1a8c2f;
+    color:white;
+    padding:12px 15px;
+    text-align:left;
+}
+
+.admin-table td { padding:12px 15px; border-bottom:1px solid #eee; }
+
+.btn-approve, .btn-reject {
+    padding:5px 12px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    color:white;
+    text-decoration:none;
+    font-size:12px;
+}
+
+.btn-approve { background:#1a8c2f; }
+.btn-reject { background:#e63946; }
