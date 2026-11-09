@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $author = sanitize($_POST['author']);
     $image = sanitize($_POST['image_url']);
 
+    // Prepare an SQL statement to insert the new article with 'pending' status
     $stmt = $pdo->prepare("INSERT INTO articles (title, content, category_id, author_id, author_name, image_url, status) VALUES (?, ?, ?, ?, ?, ?, 'pending')");
     if ($stmt->execute([$title, $content, $category_id, $_SESSION['user_id'], $author, $image])) {
         $msg = "Article submitted successfully! It will be reviewed by the admin.";
