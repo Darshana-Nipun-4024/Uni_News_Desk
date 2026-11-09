@@ -29,6 +29,7 @@ if ($category) {
     $sql .= " AND c.slug = ?";
     $params[] = $category;
 }
+// If a starting date is provided, filter articles created on or after that date
 if ($date_from) {
     $sql .= " AND DATE(a.created_at) >= ?";
     $params[] = $date_from;
