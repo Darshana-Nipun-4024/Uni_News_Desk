@@ -1,19 +1,6 @@
 <?php
 require_once '../includes/db_connect.php';
 require_once '../includes/auth_check.php';
-
-/** @var PDO $pdo Database connection provided by db_connect.php */
-
-if (!function_exists('requireAdmin')) {
-    function requireAdmin(): void
-    {
-        if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-            header('Location: ../login.php');
-            exit;
-        }
-    }
-}
-
 requireAdmin();
 
 $stats = [
