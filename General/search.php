@@ -9,7 +9,7 @@ $date_to = $_GET['date_to'] ?? '';
 
 $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
 
-// Build query
+
 $sql = "SELECT a.*, c.name AS category_name FROM articles a 
         LEFT JOIN categories c ON a.category_id = c.category_id
         WHERE a.status = 'approved'";
