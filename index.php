@@ -2,7 +2,7 @@
 require_once 'includes/db_connect.php';
 require_once 'includes/functions.php';
 
-// Fetch categories for cards
+
 $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
 
 // Fetch latest approved articles
