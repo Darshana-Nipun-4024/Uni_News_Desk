@@ -33,7 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="POST">
             <input type="text" name="full_name" placeholder="Full Name" required>
             <input type="email" name="email" placeholder="NSBM Email" required>
-            <input type="text" name="student_id" placeholder="Student ID">
+        <input type="text" name="student_id" placeholder="Student ID" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required
+>
             <input type="text" name="faculty" placeholder="Faculty">
             <input type="password" name="password" placeholder="Password" required minlength="6">
             <button type="submit">Register</button>
