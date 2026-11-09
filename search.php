@@ -40,6 +40,7 @@ if ($date_to) {
     $params[] = $date_to;
 }
 
+// Order the search results by creation date in descending order
 $sql .= " ORDER BY a.created_at DESC";
 
 $stmt = $pdo->prepare($sql);
