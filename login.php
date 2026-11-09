@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h2>Login to NSBM NewsDesk</h2>
         <?php if($error): ?><div class="alert"><?= $error ?></div><?php endif; ?>
         <form method="POST">
-            <input type="email" name="email" placeholder="Email" required>
+            <input type="email" name="email" placeholder="your.id@students.nsbm.ac.lk" pattern=".*@students\.nsbm\.ac\.lk$" title="Please enter a valid @students.nsbm.ac.lk email address" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
