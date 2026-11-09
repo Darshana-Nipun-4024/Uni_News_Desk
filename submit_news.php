@@ -3,6 +3,8 @@
 require_once 'includes/db_connect.php';
 require_once 'includes/auth_check.php';
 require_once 'includes/functions.php';
+
+// Ensure the user is logged in before allowing access to this page
 requireLogin();
 
 $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
