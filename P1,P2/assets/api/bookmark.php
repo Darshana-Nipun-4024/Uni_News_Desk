@@ -11,7 +11,7 @@ if (!isLoggedIn()) {
 $article_id = (int)($_POST['article_id'] ?? 0);
 $user_id = $_SESSION['user_id'];
 
-// Check if exists
+
 $check = $pdo->prepare("SELECT 1 FROM bookmarks WHERE user_id=? AND article_id=?");
 $check->execute([$user_id, $article_id]);
 
