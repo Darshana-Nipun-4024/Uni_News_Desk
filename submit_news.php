@@ -1,4 +1,5 @@
 <?php
+// Include necessary database connection, authentication checks, and helper functions
 require_once 'includes/db_connect.php';
 require_once 'includes/auth_check.php';
 require_once 'includes/functions.php';
