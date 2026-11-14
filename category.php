@@ -1,101 +1,103 @@
+<?php
+require_once 'includes/db_connect.php';
+require_once 'includes/functions.php';
+
+$slug = $_GET['slug'] ?? '';
+$stmt = $pdo->prepare("SELECT * FROM categories WHERE slug = ?");
+$stmt->execute([$slug]);
+$category = $stmt->fetch();
+
+if (!$category) die("Category not found.");
+
+// Pagination  
+$page = max(1, (int)($_GET['page'] ?? 1));
+$per_page = 9;
+$offset = ($page - 1) * $per_page;
+
+// Total articles
+$total = $pdo->prepare("SELECT COUNT(*) FROM articles WHERE category_id=? AND status='approved'");
+$total->execute([$category['category_id']]);
+$total = $total->fetchColumn();
+$total_pages = ceil($total / $per_page);
+
+// Fetch articles
+$articles = $pdo->prepare("SELECT * FROM articles WHERE category_id=? AND status='approved' 
+                           ORDER BY created_at DESC LIMIT $per_page OFFSET $offset");
+$articles->execute([$category['category_id']]);
+$articles = $articles->fetchAll();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic - NSBM NewsDesk</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+    <title><?= $category['name'] ?> - NSBM NewsDesk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<?php include 'includes/header.php'; ?>
 
-        body {
-            background-color: #f4f4f4;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+<section class="category-page">
+    <div class="container">
+        <h1 class="section-heading"><?= $category['name'] ?></h1>
+        <p class="cat-desc"><?= $category['description'] ?></p>
 
-        .container {
-            max-width: 1100px;
-            width: 100%;
-        }
+        <?php if (empty($articles)): ?>
+            <div class="empty-state">
+                <i class="far fa-newspaper"></i>
+                <p>No articles published in this category yet.</p>
+            </div>
+        <?php else: ?>
+            <div class="news-grid">
+                <?php foreach($articles as $a): ?>
+                    <article class="news-card">
+                        <div class="card-img">
+                            <img src="<?= $a['image_url'] ?: 'https://via.placeholder.com/400x220' ?>" alt="">
+                        </div>
+                        <div class="card-body">
+                            <span class="category-tag"><?= $category['name'] ?></span>
+                            <h3><a href="article.php?id=<?= $a['article_id'] ?>"><?= htmlspecialchars($a['title']) ?></a></h3>
+                            <p><?= truncate(strip_tags($a['content']), 120) ?></p>
+                            <small><i class="far fa-clock"></i> <?= formatDate($a['created_at']) ?></small>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
 
-        /* Section Heading */
-        .section-title {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #1a1a1a;
-            margin-bottom: 25px;
-        }
+            <!-- Pagination -->
+            <?php if ($total_pages > 1): ?>
+            <div class="pagination">
+                <?php for($i = 1; $i <= $total_pages; $i++): ?>
+                    <a href="?slug=<?= $slug ?>&page=<?= $i ?>" class="<?= $i == $page ? 'active' : '' ?>"><?= $i ?></a>
+                <?php endfor; ?>
+            </div>
+            <?php endif; ?>
+        <?php endif; ?>
+    </div>
+</section>
 
-        /* News Cards Container */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
+<?php include 'includes/footer.php'; ?>
 
-        /* Individual Card */
-        .card {
-            background: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 15px;
-        }
-
-        .card-title {
-            color: #d9383a;
-            font-size: 1.1rem;
-            font-weight: bold;
-            line-height: 1.3;
-            margin-bottom: 10px;
-        }
-
-        .card-description {
-            color: #444;
-            font-size: 0.85rem;
-            line-height: 1.4;
-        }
-
-        /* Banner Box */
-        .banner-box {
-            background-color: #1b8e3e;
-            border-radius: 25px;
-            padding: 30px;
-            text-align: center;
-            color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .banner-box h2 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .banner-box p {
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        .banner-btn {
-            background-color: #ffffff;
-            color: #1
+<style>
+.category-page { padding: 50px 0; min-height: 70vh; background: #f5f8f5; }
+.cat-desc { color: #666; margin-bottom: 30px; font-size: 16px; }
+.empty-state { text-align: center; padding: 60px; background: white; border-radius: 15px; }
+.empty-state i { font-size: 64px; color: #ccc; margin-bottom: 15px; }
+.empty-state p { color: #999; font-size: 18px; }
+.pagination { display: flex; justify-content: center; gap: 10px; margin-top: 40px; }
+.pagination a {
+    padding: 10px 16px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+}
+.pagination a.active, .pagination a:hover {
+    background: #1a8c2f;
+    color: white;
+    border-color: #1a8c2f;
+}
+</style>
+</body>
+</html>
