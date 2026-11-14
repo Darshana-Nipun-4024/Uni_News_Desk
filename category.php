@@ -63,7 +63,8 @@ $articles = $articles->fetchAll();
                     </article>
                 <?php endforeach; ?>
             </div>
-                        //Pagination 
+
+            <!-- Pagination -->
             <?php if ($total_pages > 1): ?>
             <div class="pagination">
                 <?php for($i = 1; $i <= $total_pages; $i++): ?>
@@ -81,3 +82,23 @@ $articles = $articles->fetchAll();
 .category-page { padding: 50px 0; min-height: 70vh; background: #f5f8f5; }
 .cat-desc { color: #666; margin-bottom: 30px; font-size: 16px; }
 .empty-state { text-align: center; padding: 60px; background: white; border-radius: 15px; }
+.empty-state i { font-size: 64px; color: #ccc; margin-bottom: 15px; }
+.empty-state p { color: #999; font-size: 18px; }
+.pagination { display: flex; justify-content: center; gap: 10px; margin-top: 40px; }
+.pagination a {
+    padding: 10px 16px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+}
+.pagination a.active, .pagination a:hover {
+    background: #1a8c2f;
+    color: white;
+    border-color: #1a8c2f;
+}
+</style>
+</body>
+</html>
+
