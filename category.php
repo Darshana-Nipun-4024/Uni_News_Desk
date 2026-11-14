@@ -34,3 +34,10 @@ $articles = $articles->fetchAll();
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+<body>
+<?php include 'includes/header.php'; ?>
+
+<section class="category-page">
+    <div class="container">
+        <h1 class="section-heading"><?= $category['name'] ?></h1>
+        <p class="cat-desc"><?= $category['description'] ?></p>
