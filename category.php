@@ -26,3 +26,11 @@ $articles = $pdo->prepare("SELECT * FROM articles WHERE category_id=? AND status
 $articles->execute([$category['category_id']]);
 $articles = $articles->fetchAll();
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title><?= $category['name'] ?> - NSBM NewsDesk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
