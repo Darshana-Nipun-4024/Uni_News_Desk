@@ -19,3 +19,10 @@ $total = $pdo->prepare("SELECT COUNT(*) FROM articles WHERE category_id=? AND st
 $total->execute([$category['category_id']]);
 $total = $total->fetchColumn();
 $total_pages = ceil($total / $per_page);
+
+// Fetch articles
+$articles = $pdo->prepare("SELECT * FROM articles WHERE category_id=? AND status='approved' 
+                           ORDER BY created_at DESC LIMIT $per_page OFFSET $offset");
+$articles->execute([$category['category_id']]);
+$articles = $articles->fetchAll();
+?>
