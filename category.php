@@ -48,3 +48,18 @@ $articles = $articles->fetchAll();
                 <p>No articles published in this category yet.</p>
             </div>
         <?php else: ?>
+            <div class="news-grid">
+                <?php foreach($articles as $a): ?>
+                    <article class="news-card">
+                        <div class="card-img">
+                            <img src="<?= $a['image_url'] ?: 'https://via.placeholder.com/400x220' ?>" alt="">
+                        </div>
+                        <div class="card-body">
+                            <span class="category-tag"><?= $category['name'] ?></span>
+                            <h3><a href="article.php?id=<?= $a['article_id'] ?>"><?= htmlspecialchars($a['title']) ?></a></h3>
+                            <p><?= truncate(strip_tags($a['content']), 120) ?></p>
+                            <small><i class="far fa-clock"></i> <?= formatDate($a['created_at']) ?></small>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
