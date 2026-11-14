@@ -41,3 +41,10 @@ $articles = $articles->fetchAll();
     <div class="container">
         <h1 class="section-heading"><?= $category['name'] ?></h1>
         <p class="cat-desc"><?= $category['description'] ?></p>
+
+        <?php if (empty($articles)): ?>
+            <div class="empty-state">
+                <i class="far fa-newspaper"></i>
+                <p>No articles published in this category yet.</p>
+            </div>
+        <?php else: ?>
