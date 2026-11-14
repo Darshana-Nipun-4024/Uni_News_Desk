@@ -74,3 +74,5 @@ $articles = $articles->fetchAll();
         <?php endif; ?>
     </div>
 </section>
+
+<?php include 'includes/footer.php'; ?>
