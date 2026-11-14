@@ -76,3 +76,8 @@ $articles = $articles->fetchAll();
 </section>
 
 <?php include 'includes/footer.php'; ?>
+
+<style>
+.category-page { padding: 50px 0; min-height: 70vh; background: #f5f8f5; }
+.cat-desc { color: #666; margin-bottom: 30px; font-size: 16px; }
+.empty-state { text-align: center; padding: 60px; background: white; border-radius: 15px; }
