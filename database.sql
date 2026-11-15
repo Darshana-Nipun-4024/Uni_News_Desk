@@ -63,3 +63,14 @@ CREATE TABLE bookmarks (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (article_id) REFERENCES articles(article_id) ON DELETE CASCADE
 );
+
+-- Subscriptions Table
+CREATE TABLE subscriptions (
+    sub_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    category_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY unique_sub (user_id, category_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (category_id) REFERENCES categories(category_id) ON DELETE CASCADE
+);
