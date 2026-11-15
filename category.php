@@ -9,18 +9,18 @@ $category = $stmt->fetch();
 
 if (!$category) die("Category not found.");
 
-// Pagination  
+// Pagination.  
 $page = max(1, (int)($_GET['page'] ?? 1));
 $per_page = 9;
 $offset = ($page - 1) * $per_page;
 
-// Total articles
+// Total articles.
 $total = $pdo->prepare("SELECT COUNT(*) FROM articles WHERE category_id=? AND status='approved'");
 $total->execute([$category['category_id']]);
 $total = $total->fetchColumn();
 $total_pages = ceil($total / $per_page);
 
-// Fetch articles
+// Fetch articles.
 $articles = $pdo->prepare("SELECT * FROM articles WHERE category_id=? AND status='approved' 
                            ORDER BY created_at DESC LIMIT $per_page OFFSET $offset");
 $articles->execute([$category['category_id']]);
@@ -64,7 +64,7 @@ $articles = $articles->fetchAll();
                 <?php endforeach; ?>
             </div>
 
-            <!-- Pagination -->
+            //Pagination.
             <?php if ($total_pages > 1): ?>
             <div class="pagination">
                 <?php for($i = 1; $i <= $total_pages; $i++): ?>
