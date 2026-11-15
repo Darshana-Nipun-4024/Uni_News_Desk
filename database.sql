@@ -74,3 +74,11 @@ CREATE TABLE subscriptions (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (category_id) REFERENCES categories(category_id) ON DELETE CASCADE
 );
+
+-- Default Categories
+INSERT INTO categories (name, slug, description) VALUES
+('Sports', 'sports', 'Campus sports events and achievements'),
+('Academic', 'academic', 'Academic announcements and news'),
+('Events', 'events', 'Upcoming campus events'),
+('General', 'general', 'General campus news'),
+('Clubs', 'clubs', 'Club and society updates');
