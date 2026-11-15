@@ -40,3 +40,15 @@ CREATE TABLE articles (
     FOREIGN KEY (category_id) REFERENCES categories(category_id) ON DELETE SET NULL,
     FOREIGN KEY (author_id) REFERENCES users(user_id) ON DELETE SET NULL
 );
+
+-- Comments Table
+CREATE TABLE comments (
+    comment_id INT AUTO_INCREMENT PRIMARY KEY,
+    article_id INT,
+    user_id INT,
+    comment_text TEXT NOT NULL,
+    status ENUM('visible','hidden') DEFAULT 'visible',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (article_id) REFERENCES articles(article_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
