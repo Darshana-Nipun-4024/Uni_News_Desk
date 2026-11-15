@@ -21,3 +21,22 @@ CREATE TABLE categories (
     slug VARCHAR(50) UNIQUE NOT NULL,
     description TEXT
 );
+
+-- Articles Table
+CREATE TABLE articles (
+    article_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content LONGTEXT NOT NULL,
+    category_id INT,
+    author_id INT,
+    author_name VARCHAR(150),
+    image_url VARCHAR(500),
+    status ENUM('pending','approved','rejected') DEFAULT 'pending',
+    is_breaking BOOLEAN DEFAULT FALSE,
+    is_featured BOOLEAN DEFAULT FALSE,
+    views INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (category_id) REFERENCES categories(category_id) ON DELETE SET NULL,
+    FOREIGN KEY (author_id) REFERENCES users(user_id) ON DELETE SET NULL
+);
