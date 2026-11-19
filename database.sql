@@ -50,7 +50,6 @@ CREATE TABLE comments (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
--- Bookmarks Table
 CREATE TABLE bookmarks (
     bookmark_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -61,7 +60,6 @@ CREATE TABLE bookmarks (
     FOREIGN KEY (article_id) REFERENCES articles(article_id) ON DELETE CASCADE
 );
 
--- Subscriptions Table
 CREATE TABLE subscriptions (
     sub_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -72,7 +70,6 @@ CREATE TABLE subscriptions (
     FOREIGN KEY (category_id) REFERENCES categories(category_id) ON DELETE CASCADE
 );
 
--- Default Categories
 INSERT INTO categories (name, slug, description) VALUES
 ('Sports', 'sports', 'Campus sports events and achievements'),
 ('Academic', 'academic', 'Academic announcements and news'),
