@@ -62,7 +62,7 @@ $articles = $articles->fetchAll();
                 <?php endforeach; ?>
             </div>
 
-            <!-- Pagination -->
+           
             <?php if ($total_pages > 1): ?>
             <div class="pagination">
                 <?php for($i = 1; $i <= $total_pages; $i++): ?>
