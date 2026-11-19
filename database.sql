@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS nsbm_newsdesk;
 USE nsbm_newsdesk;
 
--- Users Table (Admin + Students)
+
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
