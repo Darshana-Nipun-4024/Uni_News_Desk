@@ -39,7 +39,6 @@ CREATE TABLE articles (
     FOREIGN KEY (author_id) REFERENCES users(user_id) ON DELETE SET NULL
 );
 
--- Comments Table
 CREATE TABLE comments (
     comment_id INT AUTO_INCREMENT PRIMARY KEY,
     article_id INT,
