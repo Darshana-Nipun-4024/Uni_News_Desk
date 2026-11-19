@@ -77,6 +77,5 @@ INSERT INTO categories (name, slug, description) VALUES
 ('General', 'general', 'General campus news'),
 ('Clubs', 'clubs', 'Club and society updates');
 
--- Default Admin (password: admin123)
 INSERT INTO users (full_name, email, password, role) VALUES
 ('Super Admin', 'admin@nsbm.ac.lk', '$2y$10$e0NRxP5Rk0CgEVZ8kVfLyeqGDz6fSgRxKr9fQ3qXjEjKbF.UQZrEi', 'admin');
