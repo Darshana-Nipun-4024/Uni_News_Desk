@@ -1,7 +1,6 @@
 CREATE DATABASE IF NOT EXISTS nsbm_newsdesk;
 USE nsbm_newsdesk;
 
---Users Table (Admin + Students)
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
@@ -14,7 +13,6 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Categories Table
 CREATE TABLE categories (
     category_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) UNIQUE NOT NULL,
@@ -22,7 +20,6 @@ CREATE TABLE categories (
     description TEXT
 );
 
--- Articles Table
 CREATE TABLE articles (
     article_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -41,7 +38,6 @@ CREATE TABLE articles (
     FOREIGN KEY (author_id) REFERENCES users(user_id) ON DELETE SET NULL
 );
 
--- Comments Table
 CREATE TABLE comments (
     comment_id INT AUTO_INCREMENT PRIMARY KEY,
     article_id INT,
@@ -64,7 +60,6 @@ CREATE TABLE bookmarks (
     FOREIGN KEY (article_id) REFERENCES articles(article_id) ON DELETE CASCADE
 );
 
--- Subscriptions Table
 CREATE TABLE subscriptions (
     sub_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -75,7 +70,6 @@ CREATE TABLE subscriptions (
     FOREIGN KEY (category_id) REFERENCES categories(category_id) ON DELETE CASCADE
 );
 
--- Default Categories
 INSERT INTO categories (name, slug, description) VALUES
 ('Sports', 'sports', 'Campus sports events and achievements'),
 ('Academic', 'academic', 'Academic announcements and news'),
@@ -83,6 +77,5 @@ INSERT INTO categories (name, slug, description) VALUES
 ('General', 'general', 'General campus news'),
 ('Clubs', 'clubs', 'Club and society updates');
 
--- Default Admin (password: admin123)
 INSERT INTO users (full_name, email, password, role) VALUES
 ('Super Admin', 'admin@nsbm.ac.lk', '$2y$10$e0NRxP5Rk0CgEVZ8kVfLyeqGDz6fSgRxKr9fQ3qXjEjKbF.UQZrEi', 'admin');
