@@ -3,7 +3,7 @@ require_once '../includes/db_connect.php';
 require_once '../includes/auth_check.php';
 requireAdmin();
 
-// Top viewed articles
+//  viewed articles
 $topArticles = $pdo->query("SELECT a.*, c.name AS cat FROM articles a LEFT JOIN categories c ON a.category_id=c.category_id WHERE a.status='approved' ORDER BY views DESC LIMIT 10")->fetchAll();
 
 // Category stats
@@ -11,11 +11,11 @@ $catStats = $pdo->query("SELECT c.name, COUNT(a.article_id) AS count, SUM(a.view
                          FROM categories c LEFT JOIN articles a ON c.category_id=a.category_id
                          GROUP BY c.category_id")->fetchAll();
 
-// Monthly submissions
+
 $monthly = $pdo->query("SELECT DATE_FORMAT(created_at,'%Y-%m') AS month, COUNT(*) AS count 
                         FROM articles GROUP BY month ORDER BY month DESC LIMIT 6")->fetchAll();
 
-// Most active users
+
 $topUsers = $pdo->query("SELECT u.full_name, COUNT(a.article_id) AS submissions 
                          FROM users u LEFT JOIN articles a ON u.user_id=a.author_id
                          WHERE u.role='student' GROUP BY u.user_id ORDER BY submissions DESC LIMIT 5")->fetchAll();
