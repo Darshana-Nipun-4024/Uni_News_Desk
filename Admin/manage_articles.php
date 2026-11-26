@@ -11,7 +11,7 @@ if (isset($_GET['delete'])) {
     exit;
 }
 
-// TOGGLE BREAKING
+
 if (isset($_GET['breaking'])) {
     $pdo->prepare("UPDATE articles SET is_breaking = NOT is_breaking WHERE article_id=?")->execute([(int)$_GET['breaking']]);
     header("Location: manage_articles.php");
@@ -65,7 +65,7 @@ $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
             <i class="fas fa-plus"></i> Add New Article
         </button>
 
-        <!-- Add/Edit Form -->
+        
         <div id="addForm" style="<?= $editArticle?'display:block':'display:none' ?>;background:white;padding:25px;border-radius:10px;margin-bottom:20px;">
             <h2><?= $editArticle ? 'Edit Article' : 'Add New Article' ?></h2>
             <form method="POST">
