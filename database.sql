@@ -79,3 +79,10 @@ INSERT INTO categories (name, slug, description) VALUES
 
 INSERT INTO users (full_name, email, password, role) VALUES
 ('Super Admin', 'admin@nsbm.ac.lk', '$2y$10$e0NRxP5Rk0CgEVZ8kVfLyeqGDz6fSgRxKr9fQ3qXjEjKbF.UQZrEi', 'admin');
+
+DESCRIBE articles;
+
+ALTER TABLE articles
+  MODIFY image_url VARCHAR(255) NOT NULL DEFAULT '';
+
+UPDATE articles SET image_url = '' WHERE image_url IS NULL;
