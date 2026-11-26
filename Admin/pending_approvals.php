@@ -22,7 +22,7 @@ $pending = $pdo->query("SELECT a.*, c.name AS cat FROM articles a LEFT JOIN cate
 </head>
 <body>
 <div class="admin-wrapper">
-    <?php include 'sidebar.php'; // You can extract sidebar into reusable file ?>
+    <?php include 'sidebar.php';?>
     <main class="admin-main">
         <h1>Pending Approvals (<?= count($pending) ?>)</h1>
         <table class="admin-table">
